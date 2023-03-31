@@ -61,4 +61,4 @@ if __name__ == "__main__":
         if n_veses <= 5 and n_veses >= 1:
             select(n_veses)
         else:
-            print("Valor errado, valor deve estar entre 1 e 6!")
+            print("Valor errado, valor deve estar entre 1 e 5!")
