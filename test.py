@@ -20,10 +20,13 @@ def select(n_players = 5, funk = False):
                 spell_random[1] = "Golpear"
             print("Posição: Jg, Champion: ", champion_random[i])
             print("Summoner Spells: ", spell_random)
+            print(f"Sua bild sera: {random.choice(list_bilds)}")
         else:
             pos = shuffle_list[i]
             print(f"Posição: {pos}, Champion: ", champion_random[i])
             print("Summoner Spells: ", spell_random)
+            print(f"Sua bild sera: {random.choice(list_bilds)}")
+
 
         print("-"*50)
 
@@ -48,6 +51,9 @@ for i in pops:
     spell_list.remove(i)
     
 posi_list = ["Top", "Adc", "Sup", "Mid", "Jg"]
+
+list_bilds = ["ATT_SPD", "Letalidade", "OFF tank", "Tank", "AP"]
+
 
 if __name__ == "__main__":
 
