@@ -3,13 +3,12 @@ import requests
 import json
 import os
 from PIL import Image
-from img2txt import Img2Txt
 
 url_champ = "https://ddragon.leagueoflegends.com/cdn/10.22.1/data/pt_BR/champion.json"
 url_spells = "https://ddragon.leagueoflegends.com/cdn/10.22.1/data/pt_BR/summoner.json"
 champion_thumbnails_folder = "champion_thumbnails"
 
-# ... (código anterior permanece igual)
+
 
 def display_image_in_terminal(champion_name):
     champion_image_path = os.path.join(champion_thumbnails_folder, f"{champion_name}.png")
@@ -17,8 +16,7 @@ def display_image_in_terminal(champion_name):
     if os.path.exists(champion_image_path):
         with open(champion_image_path, 'rb') as f:
             img = Image.open(f)
-            img2txt = Img2Txt(img)
-            img2txt.display()
+            img.show()
 
 def select(n_players=5):
     shuffle_list = random.sample(posi_list, len(posi_list))
@@ -73,13 +71,13 @@ list_bilds = ["ATT_SPD", "Letalidade", "OFF tank", "Tank", "AP"]
 if __name__ == "__main__":
 
     while True:
-        n_veses = int(input("Quantos players: "))
+        n_veces = int(input("Quantos players: "))
 
-        if n_veses == 0:
+        if n_veces == 0:
             break
-        elif n_veses == "":
+        elif n_veces == "":
             continue
-        if n_veses <= 5 and n_veses >= 1:
-            select(n_veses)
+        if 1 <= n_veces <= 5:
+            select(n_veces)
         else:
             print("Valor errado, valor deve estar entre 1 e 5!")
